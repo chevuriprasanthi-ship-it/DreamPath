@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const token = urlParams.get("token");
   const email = urlParams.get("email");
+  if (!token || !email) {
+  alert("Invalid or expired reset link.");
+  return;
+}
 
   const resetForm = document.getElementById("resetForm");
 
