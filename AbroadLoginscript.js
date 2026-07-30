@@ -1,4 +1,4 @@
-function validate() {
+function validate(event) {
   event.preventDefault(); // prevent form submission
 
   const username = document.getElementById("username").value.trim();
