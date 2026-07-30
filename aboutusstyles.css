@@ -175,36 +175,38 @@ button:hover{
     margin-bottom: 20px;
 }
 .teamimages{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:20px;
 }
-.teamno1,.teamno2,.teamno3,.teamno4{
-    background-color: white;
-    border-radius: 6px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
-    overflow: hidden;
-    transition: transform 0.2s,box-shadow 0.2s;
-    width: 18rem;
-    height: 25rem;
-    margin-top: 10px;
+
+.team-member{
+    width:340px;
+    background:white;
+    border-radius:10px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    overflow:hidden;
+    transition:.3s;
 }
-.teamno1:hover,.teamno2:hover,.teamno3:hover,.teamno4:hover{
-    transform: translateY(-5px);
-    box-shadow: 0 8px 12px rgba(0,0,0,0.5);
+
+.team-member:hover{
+    transform:translateY(-6px);
+    box-shadow:0 8px 16px rgba(0,0,0,.25);
 }
-.teamno1-img,.teamno2-img,.teamno3-img,.teamno4-img{
-    width: 18rem;
-    height: 12rem;
+
+.team-member-img img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
 }
-.teamno1-img img,.teamno2-img img,.teamno3-img img,.teamno4-img img{
-    height: 100%;
-    object-fit: fill;
+
+.team-member-info{
+    padding:20px;
 }
-.teamno1-info button{
-    margin: 2rem 1rem;
+
+.team-member-info button{
+    margin-top:20px;
 }
 .name{
     font-size: 1.5rem;
@@ -420,9 +422,9 @@ button {
   animation: fadeUp 1s ease forwards;
 }
 
-.teamno1, .teamno2, .teamno3, .teamno4 {
-  animation: fadeUp 1s ease forwards;
-  animation-delay: 0.3s;
+.team-member{
+    animation:fadeUp 1s ease forwards;
+    animation-delay:.3s;
 }
 
 footer {
