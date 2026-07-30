@@ -1,5 +1,5 @@
 function validate(event) {
-  event.preventDefault(); // prevent form submission
+  event.preventDefault(); // Prevent form submission
 
   const username = document.getElementById("username").value.trim();
   const password = document.getElementById("password").value.trim();
@@ -9,14 +9,16 @@ function validate(event) {
   const validPass = "123456";
 
   if (username === validUser && password === validPass) {
+
     // Store profile info in localStorage
     localStorage.setItem('consultancyLogin', JSON.stringify({
       username: username,
-      profilePhoto: "user.jpg" // adjust as needed
+      profilePhoto: "user.jpg"
     }));
 
     // Redirect to dashboard
     window.location.href = "AbroadMentor.html";
+
   } else {
     alert("Invalid username or password");
   }
