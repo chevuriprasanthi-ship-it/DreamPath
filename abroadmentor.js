@@ -200,10 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
         input = document.createElement("input");
         input.type = field.type;
       }
-      input.id = field.id;
-      input.placeholder = field.placeholder;
-      if (field.multiple) input.multiple = true;
-      fieldset.appendChild(input);
+     input.id = field.id;
+input.placeholder = field.placeholder;
+input.required = true;   // <-- ADD THIS LINE
+
+if (field.multiple) input.multiple = true;
+
+fieldset.appendChild(input);
     });
   }
 
@@ -230,9 +233,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (currentStep > 0) showStep(currentStep - 1);
   });
 
-  nextBtn.addEventListener("click", () => {
-    if (currentStep < steps.length - 1) showStep(currentStep + 1);
-  });
+nextBtn.addEventListener("click", () => {
+
+  const inputs = stepContent.querySelectorAll("input, textarea");
+
+  for (const input of inputs) {
+    if (!input.checkValidity()) {
+      input.reportValidity();
+      return;
+    }
+  }
+
+  if (currentStep < steps.length - 1) {
+    showStep(currentStep + 1);
+  }
+
+});
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
