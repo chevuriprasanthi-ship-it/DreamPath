@@ -255,20 +255,20 @@ nextBtn.addEventListener("click", () => {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const mentorData = {};
-    steps.forEach(step => {
-      step.fields.forEach(field => {
-        const input = document.getElementById(field.id);
-        if (input) {
-          if (input.type === 'file') {
-            mentorData[field.id] = input.files.length > 0 ? [...input.files].map(file => file.name) : [];
-          } else if (input.type === 'checkbox') {
-            mentorData[field.id] = input.checked;
-          } else {
-            mentorData[field.id] = input.value;
-          }
+    // <-- INSERT HERE (around line 236)
+    const inputs = stepContent.querySelectorAll("input, textarea, select");
+
+    for (const input of inputs) {
+        if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
         }
-      });
+    }
+
+    const mentorData = {};
+
+    // rest of your code...
+});
     });
 
     localStorage.setItem('mentorData', JSON.stringify(mentorData));
