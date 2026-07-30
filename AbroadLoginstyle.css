@@ -69,6 +69,7 @@ body{
     justify-content: center;
 }
 #btn{
+   #btn{
     border: 0;
     background: none;
     display: block;
@@ -81,6 +82,7 @@ body{
     border-radius: 20px;
     transition: all .2s ease-in-out;
     cursor: pointer;
+}
 }
 #btn:hover{
     background-color: #c94a89;
