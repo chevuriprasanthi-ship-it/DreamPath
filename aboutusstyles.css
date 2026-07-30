@@ -151,20 +151,22 @@ body{
 }
 
 button{
-    border: none;
-    outline: 0;
-    padding: 10px;
-    margin: 2rem;
-    font-size: 1rem;
-    color: white;
-    background-color: #f0c7cf;
-    text-align: center;
-    cursor: pointer;
-    width: 15rem;
-    border-radius: 4px;
+    border:none;
+    outline:none;
+    padding:12px;
+    font-size:1rem;
+    color:white;
+    background:#f0c7cf;
+    cursor:pointer;
+    width:180px;
+    border-radius:5px;
+    display:block;
+    margin:20px auto;
+    transition:.3s;
 }
+
 button:hover{
-    background-color: #c3749c;
+    background:#c3749c;
 }
 .team{
     padding: 30px 0;
@@ -183,11 +185,12 @@ button:hover{
 
 .team-member{
     width:340px;
-    background:white;
-    border-radius:10px;
-    box-shadow:0 4px 10px rgba(0,0,0,.2);
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
     overflow:hidden;
     transition:.3s;
+    text-align:center;
 }
 
 .team-member:hover{
@@ -199,12 +202,14 @@ button:hover{
     width:100%;
     height:320px;
     object-fit:cover;
+    display:block;
 }
-
 .team-member-info{
     padding:20px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
-
 .team-member-info button{
     margin-top:20px;
 }
