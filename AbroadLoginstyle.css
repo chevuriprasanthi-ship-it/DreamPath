@@ -68,7 +68,7 @@ body{
     align-items: center;
     justify-content: center;
 }
-#btn{
+
    #btn{
     border: 0;
     background: none;
@@ -83,7 +83,7 @@ body{
     transition: all .2s ease-in-out;
     cursor: pointer;
 }
-}
+
 #btn:hover{
     background-color: #c94a89;
 }
