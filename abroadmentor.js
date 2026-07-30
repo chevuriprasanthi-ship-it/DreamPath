@@ -235,7 +235,7 @@ fieldset.appendChild(input);
 
 nextBtn.addEventListener("click", () => {
 
-  const inputs = stepContent.querySelectorAll("input, textarea");
+  const inputs = stepContent.querySelectorAll("input, textarea, select");
 
   for (const input of inputs) {
     if (!input.checkValidity()) {
