@@ -25,45 +25,64 @@ DreamPath is a dynamic web application designed to assist students who aspire to
 ---
 
 ## 📁 Project Structure
+
+```
 DreamPath/
 ├── frontend/
-│ ├── index.html
-│ ├── styles/
-│ └── scripts/
+│   ├── index.html
+│   ├── styles/
+│   └── scripts/
 ├── backend/
-│ ├── server.js
-│ └── routes/
+│   ├── server.js
+│   └── routes/
 ├── public/
-│ └── assets/
+│   └── assets/
 ├── README.md
 └── package.json
+```
 
 ---
 
 ## 🚀 How to Run Locally
 
-1. Clone the repository  
-   `git clone https://github.com/ThummalaSravanthi05/DreamPath.git`
+1. Clone the repository
 
-2. Navigate to the folder  
-   `cd DreamPath`
+```bash
+git clone https://github.com/chevuriprasanthi-ship-it/DreamPath.git
+```
 
-3. Install dependencies  
-   `npm install`
+2. Navigate to the folder
 
-4. Start the server  
-   `node backend/server.js`
+```bash
+cd DreamPath
+```
+
+3. Install dependencies
+
+```bash
+npm install
+```
+
+4. Start the server
+
+```bash
+node backend/server.js
+```
 
 ---
 
 ## 🧑‍💻 Author
 
-**Sravanthi Thummala**  
-💬 Passionate about building applications that solve real student problems.  
-📫 Connect with me via GitHub or LinkedIn!
+**Prasanthi Chevuri**
+
+💬 Passionate about building applications that solve real student problems.
+
+📧 Email: **chevuriprasanthi@gmail.com**
+
+GitHub: **https://github.com/chevuriprasanthi-ship-it**
 
 ---
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the **MIT License**.
