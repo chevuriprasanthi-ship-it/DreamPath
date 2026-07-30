@@ -242,11 +242,22 @@ button:hover{
 .icons,.copyrightmsg{
     text-align: center;
 }
+.icons a{
+    text-decoration:none;
+}
+
 .icons .fa{
-    color: #c3749c;
-    margin: 0 13px;
-    cursor: pointer;
-    padding: 18px 0;
+    color:#c3749c;
+    font-size:30px;
+    margin:0 15px;
+    cursor:pointer;
+    padding:18px 0;
+    transition:.3s;
+}
+
+.icons .fa:hover{
+    color:#5a1f4f;
+    transform:scale(1.2);
 }
 .modal {
   display: none;
