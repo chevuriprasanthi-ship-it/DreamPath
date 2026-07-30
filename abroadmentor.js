@@ -202,7 +202,9 @@ document.addEventListener('DOMContentLoaded', () => {
       }
      input.id = field.id;
 input.placeholder = field.placeholder;
-input.required = true;   // <-- ADD THIS LINE
+if (field.type !== "checkbox") {
+    input.required = true;
+} // <-- ADD THIS LINE
 
 if (field.multiple) input.multiple = true;
 
