@@ -195,6 +195,13 @@ closeProfile.addEventListener("click", () => {
       }
       input.id = field.id;
       input.placeholder = field.placeholder;
+      if (
+    field.type !== "file" &&
+    field.id !== "rating" &&
+    field.id !== "metrics"
+) {
+    input.required = true;
+}
       if (formData[field.id] !== undefined) {
       input.value = formData[field.id];
     }
@@ -362,6 +369,15 @@ closeProfile.addEventListener("click", () => {
   });
 
   nextBtn.addEventListener("click", () => {
+     const inputs = stepContent.querySelectorAll("input, textarea");
+
+    for (const input of inputs) {
+        if (!input.checkValidity()) {
+            input.reportValidity();
+            return;
+        }
+    }
+
     if (currentStep < steps.length - 1) showStep(currentStep + 1);
   });
 
@@ -383,15 +399,51 @@ steps.forEach(step => {
       }
     });
   });
-  const requiredFields = ["name", "year", "locations", "website", "email", "phone","countries","universities","services","specializations","yearsService","studentsSent","visaSuccess","stories","photos","testimonials","reviewLinks","fees","refund","counselors","languages","certifications","bookingInfo","availability","registrations","affiliations","internationalCerts","metrics"];
-  for (const fieldId of requiredFields) {
+  const requiredFields = [
+  "name",
+  "year",
+  "locations",
+  "website",
+  "email",
+  "phone",
+  "countries",
+  "universities",
+  "services",
+  "specializations",
+  "yearsService",
+  "studentsSent",
+  "visaSuccess",
+  "stories",
+  "photos",          // ✅ Keep this
+  "testimonials",
+  "reviewLinks",
+  "fees",
+  "refund",
+  "counselors",
+  "languages",
+  "certifications",
+  "bookingInfo",
+  "availability",
+  "registrations",
+  "affiliations",
+  "internationalCerts"
+];
+ for (const fieldId of requiredFields) {
     const input = document.getElementById(fieldId);
-    if (!consultancyData[fieldId] || consultancyData[fieldId].toString().trim() === "") {
-      alert(`Please fill in the required field: ${fieldId}`);
-      return;
-    }
-  }
 
+    if (fieldId === "photos") {
+        if (!input.files.length) {
+            alert("Please upload at least one photo.");
+            return;
+        }
+        continue;
+    }
+
+    if (!consultancyData[fieldId] || consultancyData[fieldId].toString().trim() === "") {
+        alert(`Please fill in the required field: ${fieldId}`);
+        return;
+    }
+}
   const user = JSON.parse(localStorage.getItem('consultancyLogin'));
   if (!user || !user.email) {
     return alert("User not found. Please log in again.");
@@ -408,6 +460,8 @@ steps.forEach(step => {
 
     const result = await res.json();
     if (res.ok) {
+       localStorage.setItem("consultancyData", JSON.stringify(consultancyData));
+    localStorage.setItem("formSubmitted", "true");
       alert(result.message);
       showSummaryMode(consultancyData);
     } else {
